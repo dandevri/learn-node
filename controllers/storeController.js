@@ -1,10 +1,12 @@
-
-exports.myMiddleware = (req, res, next) => {
-  req.name = 'Dan';
-  next();
+exports.homePage = (req, res) => {
+  res.render('index');
 }
 
-exports.homePage = (req, res) => {
-  console.log(req.name);
-  res.render('index');
+exports.addStore = (req, res) => {
+  res.render('editStore', {title: 'Add Store'});
+}
+
+exports.createStore = (req, res) => {
+  console.log(req.body);
+  res.json(req.body) // information about what got send
 }

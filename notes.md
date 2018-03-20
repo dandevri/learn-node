@@ -30,7 +30,7 @@ Push data with .json from the server and client-side request the data.
 Before we even hit routers, express is going to check the url's. And check if anything posted something. That's middleware.
 
 * req; information from client
-* res; information to send data backS
+* res; information to send data back
 * res.query; query parameters
 
 ## 2.2 - Templating
@@ -73,3 +73,26 @@ Routes is kinda like of or own middleware.
 
 Error handlers intercept the middleware.
 Stack trace, where dit it happen. Files that bubble up.
+
+## 3.1
+Models; were our data is going to be stored. Spreadsheet; create columns etc. That's a model.
+Mongodb can be a loose database. But it is better to keep it strict.
+MongoDB is our database but mongoose is the package to interface.
+
+Query db to wait, it happens async.
+module.exports if you want the main thing to be exported. Just specific properties need to be exported as function.
+Model gets a schema, schema = what the data is going to look like.
+
+Do all the data normalization as close to the model as possible.
+Create model but you also import it so mongodb knows about it.
+Singleton; mongodb will know about them. You can configure it troughout node.
+
+## 3.2
+mixin pass some data and displays html.
+one mixin to one file.
+mixins work just like function (accepts)
+action tells the browser where to send the data
+method tells the browser how to send the data
+post is great for invisible
+
+We want to save this data in the database.

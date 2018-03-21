@@ -96,3 +96,22 @@ method tells the browser how to send the data
 post is great for invisible
 
 We want to save this data in the database.
+
+## 4.1 
+JS is async, when you save to store that you need to wait. Callback hell.
+Promise returns (not if it success) but it will fail.
+You can chain .then, but we can even do better. ES8
+Composition, wrapping a function inside another function.
+
+First create the schema and then in the controller create a new version from the schema and save it to the DB.
+
+## 4.2
+Redirect to new page when something sucess. Don't redirect to page to tell them something. You just want to send them a little information.
+Locals are variables that are available to me in templates.
+
+## 4.3 
+-
+
+## 4.4
+MongoDB by default wil asign it an ID.
+Anytime you deal with the database you want to make it async.

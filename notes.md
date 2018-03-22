@@ -115,3 +115,8 @@ Locals are variables that are available to me in templates.
 ## 4.4
 MongoDB by default wil asign it an ID.
 Anytime you deal with the database you want to make it async.
+
+## 5.1
+Before start storing data, how should data be stored. MongoDB has many types. You can then perform more complex queries.
+
+## 5.2

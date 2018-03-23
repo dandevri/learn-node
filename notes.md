@@ -120,3 +120,13 @@ Anytime you deal with the database you want to make it async.
 Before start storing data, how should data be stored. MongoDB has many types. You can then perform more complex queries.
 
 ## 5.2
+-
+
+## 6.1
+Browser needs to send it as a multipart. Then configure express to handle that file type.
+Every files has it's own mimetype to describe what type of file it is. You can't rely on remaning alone, but you can rely on the mimetype of a file.
+
+Buffer, we are not saving but reading into memory. You also need to do something with the response, otherwise server is going to give a timeout.
+
+## 6.2
+If a query in mongoDB doesn't find anything that not an error but it just returns null.

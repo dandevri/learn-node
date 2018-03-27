@@ -130,3 +130,14 @@ Buffer, we are not saving but reading into memory. You also need to do something
 
 ## 6.2
 If a query in mongoDB doesn't find anything that not an error but it just returns null.
+
+## 7.1
+-
+
+## 7.2
+You don't want to query alot of stores and wait for the data to come back. That can be alot of performance if you have over 1000 stores. Offload the heavy lifting onto the database. Write code in node and let mongodb handle it.
+
+Aggregation; complex query with multiple steps. Array with multiple commands.
+
+## 7.3
+With asymc await you don't want to wait on eachother. You want to fire them async.

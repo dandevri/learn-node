@@ -80,3 +80,13 @@ exports.getStoreBySlug = async (req, res, next) => {
   res.render('store', { store , title: store.name }) // pass inn the data
 };
 
+exports.getStoresByTag = async (req, res, next) => {
+  const tag = req.params.tag;
+  const tagQuery = tag || { $exists: true}; // if there are no tags fall back
+  const tagsPromise = Store.getTagsList(); // get the list of tags
+  const storesPromise = Store.find({tags: tagQuery}); // find stores that include specific tag
+
+  //await promises and destructure them
+  const [tags, stores] = await Promise.all([tagsPromise, storesPromise]); // destructure the result 
+  res.render('tag', { tags, title: 'Tags', tag, stores})
+}

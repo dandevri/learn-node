@@ -140,9 +140,13 @@ You don't want to query alot of stores and wait for the data to come back. That 
 Aggregation; complex query with multiple steps. Array with multiple commands.
 
 ## 7.3
+
 With asymc await you don't want to wait on eachother. You want to fire them async.
 
 ## 8.1
 One controller for specific part of your website. Try to put components in mixins. You generally don't want to store the password into the database but only the hash. Passport is defacto library. You want to do as much validation in the schema. Otherwise in the controller. Request body is the stuff that comes from a form.
 
 We also validate on the server because some people can take the required attribute off.
+
+## 8.3
+Virtual field can be generated in mongoose. Fields can be generated. Mostly used for conversion. (kg to pounds or something)

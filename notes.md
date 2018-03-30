@@ -150,3 +150,6 @@ We also validate on the server because some people can take the required attribu
 
 ## 8.3
 Virtual field can be generated in mongoose. Fields can be generated. Mostly used for conversion. (kg to pounds or something)
+
+## 9
+Relationship between different parts of our schema.

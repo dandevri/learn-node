@@ -168,3 +168,5 @@ Using ES6 on the front-end (import) and require (commonjs) on the server-side.
 Cross side scripting attack.
 
 Keep ajax request as slim as possible. Slim down the json response.
+
+Use JavaScript to post the data instead of using the browser to do it.

@@ -100,3 +100,22 @@ exports.getStoresByTag = async (req, res, next) => {
   const [tags, stores] = await Promise.all([tagsPromise, storesPromise]); // destructure the result 
   res.render('tag', { tags, title: 'Tags', tag, stores})
 }
+
+exports.searchStores = async (req, res) => {
+  const stores = await Store
+  .find({
+    // operators
+    $text: {
+      $search: req.query.q, 
+    }
+  }, {
+    // not on date but on metadata projection
+    score: { $meta: 'textScore'}
+  })
+  .sort({ // sort it by the value
+    score: { $meta: 'textScore'}
+  })
+  // limit
+  .limit(5)
+  res.json(stores);
+}

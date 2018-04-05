@@ -59,6 +59,9 @@ router.post('/account/reset/:token',
   catchErrors(authController.update)
 );
 
+// api
+router.get('/api/search', catchErrors(storeController.searchStores));
+
 // variable in router
 // router.get('/reverse/:name', (req, res) => {
 //   const reverse = [...req.params.name].reverse().join('');

@@ -153,3 +153,16 @@ Virtual field can be generated in mongoose. Fields can be generated. Mostly used
 
 ## 9
 Relationship between different parts of our schema.
+
+## 10.1
+
+-
+
+## 10.2
+Indexes; do some homework before we query. Index it, get yourself ready. Indexing will happen inside the schema.
+Take query parameters and search database.
+
+
+Using ES6 on the front-end (import) and require (commonjs) on the server-side.
+
+Cross side scripting attack.

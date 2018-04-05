@@ -166,3 +166,5 @@ Take query parameters and search database.
 Using ES6 on the front-end (import) and require (commonjs) on the server-side.
 
 Cross side scripting attack.
+
+Keep ajax request as slim as possible. Slim down the json response.

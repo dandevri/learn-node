@@ -2,6 +2,7 @@
 # dotenv environment variables file
 .env
 variables.env
+variables.env.now
 
 # Dependency directories
 node_modules/

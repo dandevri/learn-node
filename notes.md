@@ -170,3 +170,9 @@ Cross side scripting attack.
 Keep ajax request as slim as possible. Slim down the json response.
 
 Use JavaScript to post the data instead of using the browser to do it.
+
+Virtual field dont explicitly go to json or in objects.
+
+Aggregation; multistep or complex queries.
+
+Put complex queries inside the model, as close to the model as you can.

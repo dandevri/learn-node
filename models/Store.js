@@ -37,7 +37,10 @@ const storeSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'User', // the author is a reference to the user
     required: 'You must supply an author.'
-  }
+  }, 
+}, {
+  toJSON: { virtuals: true },
+  toObject:  {virtuals: true }
 });
 
 // Define index
@@ -77,5 +80,42 @@ storeSchema.statics.getTagsList = function() {
     { $sort: { count: -1 }}
   ]);
 }
+
+storeSchema.statics.getTopStores = function() {
+  return this.aggregate([
+    //Lookup stores and populate reviews
+    { $lookup: {from: 'reviews', localField: '_id', foreignField: 'store', as: 'reviews' }},
+    // filter for only items 2 or more
+    { $match: {'reviews.1': {$exists: true }}},
+    // add the average review
+    { $project: {
+      photo: '$$ROOT.photo',
+      name: '$$ROOT.name',
+      reviews: '$$ROOT.reviews',
+      slug: '$$ROOT.slug',
+      averageRating: { $avg: '$reviews.rating'}
+    }},
+    // sort it new field
+    { $sort: { averageRating: -1 }},
+    // limit to 10 most
+    { $limit: 10}
+  ]);
+}
+
+// find reviews where stores _id === reviews store property
+// go to another model and query
+storeSchema.virtual('reviews', {
+  ref: 'Review', // what model to link
+  localField: '_id', // which field on store
+  foreignField: 'store' // which field on review
+})
+
+function autopopulate(next) {
+  this.populate('reviews');
+  next();
+}
+
+storeSchema.pre('find', autopopulate);
+storeSchema.pre('findOne', autopopulate);
 
 module.exports = mongoose.model('Store', storeSchema);

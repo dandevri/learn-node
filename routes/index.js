@@ -71,6 +71,7 @@ router.get('/hearts', authController.isLoggedIn, catchErrors(storeController.get
 router.post('/reviews/:id', authController.isLoggedIn, catchErrors(reviewController.addReview));
 
 router.get('/top', catchErrors(storeController.getTopStores))
+router.get('/stores/page/:page', catchErrors(storeController.getStores))
 
 // variable in router
 // router.get('/reverse/:name', (req, res) => {
